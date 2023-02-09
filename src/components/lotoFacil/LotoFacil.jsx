@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 
-export function Mega() {
+export function LotoFacil() {
   const [numbers, setNumbers] = useState([])
-  const [limit, setLimit] = useState(6)
+  const [limit, setLimit] = useState(15)
   const [errorMessage, setErrorMessage] = useState('')
   const [previousNumbers, setPreviousNumbers] = useState([])
-  const [allGames, setAllGames] = useState([])
+  const [allLotoGames, setAllLotoGames] = useState([])
   const [cookies, setCookie] = useCookies(['allGames'])
 
   useEffect(() => {
-    if (cookies.allGames) {
-      setAllGames(cookies.allGames)
+    if (cookies.allLotoGames) {
+      setAllLotoGames(cookies.allLotoGames)
     }
   }, [])
 
   useEffect(() => {
-    setCookie('allGames', allGames, { path: '/' })
-  }, [allGames])
+    setCookie('allLotoGames', allLotoGames, { path: '/' })
+  }, [allLotoGames])
 
   function generateNumbers() {
-    if (limit < 6 || limit > 15) {
-      setErrorMessage('Por favor, digite entre 6 á 15 números')
+    if (limit < 15 || limit > 20) {
+      setErrorMessage('Por favor, digite entre 15 á 20 números')
       return
     }
 
-    const allNumbers = Array.from({ length: 60 }, (_, i) => i + 1)
+    const allNumbers = Array.from({ length: 25 }, (_, i) => i + 1)
     let shuffled = allNumbers.filter(num => !previousNumbers.includes(num))
 
     if (shuffled.length < limit) {
@@ -39,18 +39,18 @@ export function Mega() {
       .sort((a, b) => a - b)
     setNumbers(sorted)
     setPreviousNumbers(sorted)
-    setAllGames([...allGames, sorted])
+    setAllLotoGames([...allLotoGames, sorted])
     setErrorMessage('')
   }
 
   function deleteGame(index) {
-    const updatedGames = allGames.filter((_, i) => i !== index)
-    setAllGames(updatedGames)
+    const updatedGames = allLotoGames.filter((_, i) => i !== index)
+    setAllLotoGames(updatedGames)
   }
 
   return (
     <div>
-      <h2> Números da Mega Sena</h2>
+      <h2> Números da Loto Fácil</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <p>
         <label htmlFor="limit">Números: </label>
@@ -65,7 +65,7 @@ export function Mega() {
       <button onClick={generateNumbers}>Gerar os números</button>
       <h3>Todos os jogos</h3>
       <ul>
-        {allGames.map((game, index) => (
+        {allLotoGames.map((game, index) => (
           <li key={index}>
             {game.join(', ')}{' '}
             <button onClick={() => deleteGame(index)}>Excluir</button>
