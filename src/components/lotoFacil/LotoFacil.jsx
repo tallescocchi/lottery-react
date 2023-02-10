@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import './LotoFacil.css'
+
+import { useState, useEffect } from 'react'
+
 import { useCookies } from 'react-cookie'
 
 export function LotoFacil() {
@@ -49,7 +52,7 @@ export function LotoFacil() {
   }
 
   return (
-    <div>
+    <div className='LotoFacil'>
       <h2> Números da Loto Fácil</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <p>

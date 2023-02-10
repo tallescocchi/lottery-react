@@ -1,0 +1,29 @@
+* {
+  font-family: Helvetica, sans-serif;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #5c258d;
+  background: -webkit-linear-gradient(to right, #4389a2, #5c258d);
+  background: linear-gradient(to right, #4389a2, #5c258d);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+ height: 30px;
+ width: 40px;
+
+ background-color: #4389a2;
+ border: 0;
+}

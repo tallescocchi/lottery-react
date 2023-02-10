@@ -1,14 +1,17 @@
-import './App.css'
-import { LotoFacil } from './components/lotoFacil/LotoFacil'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { Mega } from './components/mega/Mega'
+import './App.css'
+
+import { Content } from './components/layout/Content'
+import { Aside } from './components/layout/Aside'
 
 function App() {
-
   return (
     <div className="App">
-      <Mega />
-      <LotoFacil />
+      <BrowserRouter>
+          <Aside />
+          <Content />
+      </BrowserRouter>
     </div>
   )
 }

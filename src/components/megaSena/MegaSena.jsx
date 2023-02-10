@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 
-export function Mega() {
+export function MegaSena() {
   const [numbers, setNumbers] = useState([])
   const [limit, setLimit] = useState(6)
   const [errorMessage, setErrorMessage] = useState('')
