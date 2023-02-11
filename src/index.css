@@ -10,6 +10,8 @@ body {
   background: #5c258d;
   background: -webkit-linear-gradient(to right, #4389a2, #5c258d);
   background: linear-gradient(to right, #4389a2, #5c258d);
+
+  color: #f9fafb;
 }
 
 a {
@@ -22,8 +24,10 @@ ul {
 
 input {
  height: 30px;
- width: 40px;
+ width: 50px;
+ padding: 0.5rem;
 
- background-color: #4389a2;
+ background-color: #52525b;
+ color: #f9fafb;
  border: 0;
 }
